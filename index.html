@@ -25,9 +25,9 @@
     </nav>
 
     <div class="lang-switcher">
-        <img src="https://flagcdn.com/w40/ca.png" onclick="setLanguage('en')" alt="English">
-        <img src="https://flagcdn.com/w40/fr.png" onclick="setLanguage('fr')" alt="Français">
-        <img src="https://flagcdn.com/w40/br.png" onclick="setLanguage('pt')" alt="Português">
+        <img src="https://flagcdn.com/w40/ca.png" onclick="setLanguage('en')" alt="English" style="cursor:pointer">
+        <img src="https://flagcdn.com/w40/fr.png" onclick="setLanguage('fr')" alt="Français" style="cursor:pointer">
+        <img src="https://flagcdn.com/w40/br.png" onclick="setLanguage('pt')" alt="Português" style="cursor:pointer">
     </div>
 
     <header>
@@ -66,7 +66,7 @@
         <div class="section-container-inner">
             <h3 class="section-title" id="title-process">Our Process</h3>
             <div class="process-grid">
-                <div class="info-card assess-card"><i class="fa-solid fa-magnifying-glass"></i><h4 id="p1-t">1. Assess</h4><p id="p1-p">We understand your business goals for the Canadian market.</p></div>
+                <div class="info-card assess-card"><i class="fa-solid fa-magnifying-glass"></i><h4 id="p1-t">1. Assess</h4><p id="p2-p">We understand your business goals for the Canadian market.</p></div>
                 <div class="info-card target-card"><i class="fa-solid fa-bullseye"></i><h4 id="p2-t">2. Target</h4><p id="p2-p">We identify the right distributors and partners for your brand.</p></div>
                 <div class="info-card present-card"><i class="fa-solid fa-bullhorn"></i><h4 id="p3-t">3. Present</h4><p id="p3-p">We represent your brand locally and pitch directly to decision-makers.</p></div>
                 <div class="info-card negotiate-card"><i class="fa-solid fa-handshake"></i><h4 id="p4-t">4. Negotiate</h4><p id="p4-p">We drive negotiations to secure the best possible terms.</p></div>
@@ -151,59 +151,107 @@
     <script>
         const translations = {
             en: {
-                "title": "Prinexo | Strategic Canadian Representation",
+                "meta-title": "Prinexo | Strategic Canadian Representation",
+                "meta-desc": "Your local bridge to the Canadian market. Strategic commercial representation for global businesses seeking to expand in Canada.",
                 "nav-about": "About", "nav-process": "Process", "nav-contact": "Contact",
                 "hero-h1": "Your Local Bridge to the Canadian Market",
                 "hero-h2": "Strategic Representation. Locally Rooted, Globally Minded.",
                 "title-about": "About Us", "about-lead": "We are a Canadian commercial representation company dedicated to connecting businesses with distributors and strategic partners across Canada.",
-                "card-service-t": "Service", "card-mission-t": "Our Mission", "card-vision-t": "Our Vision", "card-values-t": "Our Values",
-                "title-process": "Our Process", "p1-t": "1. Assess", "p2-t": "2. Target", "p3-t": "3. Present", "p4-t": "4. Negotiate", "p5-t": "5. Close", "p6-t": "6. Grow",
-                "comm-t": "Commission-Based Model", "title-contact": "Contact Us",
+                "card-service-t": "Service", "card-service-p": "We act as your commercial force, connecting you directly with decision-makers to drive revenue.",
+                "card-mission-t": "Our Mission", "card-mission-p": "To connect businesses with strategic partners in Canada, enabling entry through results-driven representation.",
+                "card-vision-t": "Our Vision", "card-vision-p": "To be the trusted reference in Canadian representation, recognized for building strong partnerships.",
+                "card-values-t": "Our Values", "card-values-p": "We leverage local market knowledge and commercial insight to create real opportunities.",
+                "title-process": "Our Process", 
+                "p1-t": "1. Assess", "p1-p": "We understand your business goals for the Canadian market.",
+                "p2-t": "2. Target", "p2-p": "We identify the right distributors and partners for your brand.",
+                "p3-t": "3. Present", "p3-p": "We represent your brand locally and pitch directly to decision-makers.",
+                "p4-t": "4. Negotiate", "p4-p": "We drive negotiations to secure the best possible terms.",
+                "p5-t": "5. Close", "p5-p": "We help finalize agreements and activate partnerships.",
+                "p6-t": "6. Grow", "p6-p": "We support ongoing long-term sales growth and performance.",
+                "comm-t": "Commission-Based Model", "comm-p": "No results, no commission — our success is directly tied to yours.",
+                "title-contact": "Contact Us", "hours-lead": "Available during (PST) hours:",
+                "day-mon": "Monday", "day-tue": "Tuesday", "day-wed": "Wednesday", "day-thu": "Thursday", "day-fri": "Friday",
                 "label-wa": "WhatsApp", "label-email": "Email", "label-phone": "Phone",
                 "form-title": "Business Inquiry", "lbl-name": "Full Name *", "lbl-company": "Company Name *", "lbl-f-email": "Email Address *",
-                "lbl-website": "Website (Optional)", "lbl-industry": "Industry *", "lbl-product": "Main Product/Service *",
+                "lbl-website": "Website (Optional)", "lbl-product": "Main Product/Service *",
                 "lbl-qty": "Current Sales Capacity", "lbl-msg": "How can we help you expand in Canada? *", "btn-submit": "Send Inquiry",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – All Rights Reserved"
             },
             fr: {
-                "title": "Prinexo | Représentation Stratégique au Canada",
+                "meta-title": "Prinexo | Représentation Stratégique au Canada",
+                "meta-desc": "Votre pont local vers le marché canadien. Représentation commerciale stratégique pour les entreprises mondiales.",
                 "nav-about": "À Propos", "nav-process": "Processus", "nav-contact": "Contact",
                 "hero-h1": "Votre pont local vers le marché canadien",
-                "hero-h2": "Représentation stratégique. Enracinée localement.",
-                "title-about": "À Propos", "about-lead": "Nous sommes une société de représentation commerciale canadienne dédiée à connecter les entreprises avec des partenaires.",
-                "card-service-t": "Service", "card-mission-t": "Notre Mission", "card-vision-t": "Notre Vision", "card-values-t": "Nos Valeurs",
-                "title-process": "Notre Processus", "p1-t": "1. Évaluer", "p2-t": "2. Cibler", "p3-t": "3. Présenter", "p4-t": "4. Négocier", "p5-t": "5. Conclure", "p6-t": "6. Croître",
-                "comm-t": "Modèle à la Commission", "title-contact": "Contactez-nous",
+                "hero-h2": "Représentation stratégique. Enracinée localement, esprit mondial.",
+                "title-about": "À Propos", "about-lead": "Nous sommes une société de représentation commerciale canadienne dédiée à connecter les entreprises avec des distributeurs et des partenaires stratégiques à travers le Canada.",
+                "card-service-t": "Service", "card-service-p": "Nous agissons comme votre force commerciale, vous connectant directement aux décideurs.",
+                "card-mission-t": "Notre Mission", "card-mission-p": "Connecter les entreprises à des partenaires stratégiques au Canada via une représentation axée sur les résultats.",
+                "card-vision-t": "Notre Vision", "card-vision-p": "Être la référence de confiance en représentation canadienne, reconnue pour bâtir des partenariats solides.",
+                "card-values-t": "Nos Valeurs", "card-values-p": "Nous utilisons notre connaissance du marché local pour créer de réelles opportunités.",
+                "title-process": "Notre Processus", 
+                "p1-t": "1. Évaluer", "p1-p": "Nous comprenons vos objectifs commerciaux pour le marché canadien.",
+                "p2-t": "2. Cibler", "p2-p": "Nous identifions les bons distributeurs et partenaires pour votre marque.",
+                "p3-t": "3. Présenter", "p3-p": "Nous représentons votre marque localement auprès des décideurs.",
+                "p4-t": "4. Négocier", "p4-p": "Nous menons les négociations pour obtenir les meilleures conditions.",
+                "p5-t": "5. Conclure", "p5-p": "Nous aidons à finaliser les accords et à activer les partenariats.",
+                "p6-t": "6. Croître", "p6-p": "Nous soutenons la croissance des ventes et la performance à long terme.",
+                "comm-t": "Modèle à la Commission", "comm-p": "Aucun résultat, aucune commission — notre succès est lié au vôtre.",
+                "title-contact": "Contactez-nous", "hours-lead": "Disponible pendant les heures (PST) :",
+                "day-mon": "Lundi", "day-tue": "Mardi", "day-wed": "Mercredi", "day-thu": "Jeudi", "day-fri": "Vendredi",
                 "label-wa": "WhatsApp", "label-email": "E-mail", "label-phone": "Téléphone",
-                "form-title": "Demande de partenariat", "lbl-name": "Nom complet *", "lbl-company": "Nom de l'entreprise *", "lbl-f-email": "Adresse e-mail *",
-                "lbl-website": "Site Web (Optionnel)", "lbl-industry": "Secteur d'activité *", "lbl-product": "Produit/Service principal *",
-                "lbl-qty": "Capacité de volume de vente", "lbl-msg": "Comment pouvons-nous vous aider? *", "btn-submit": "Envoyer",
+                "form-title": "Demande commerciale", "lbl-name": "Nom complet *", "lbl-company": "Nom de l'entreprise *", "lbl-f-email": "Adresse e-mail *",
+                "lbl-website": "Site Web (Optionnel)", "lbl-product": "Produit/Service principal *",
+                "lbl-qty": "Capacité de vente actuelle", "lbl-msg": "Comment pouvons-nous vous aider à vous expandre au Canada ? *", "btn-submit": "Envoyer la demande",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – Tous droits réservés"
             },
             pt: {
-                "title": "Prinexo | Representação Estratégica no Canadá",
+                "meta-title": "Prinexo | Representação Estratégica no Canadá",
+                "meta-desc": "Sua ponte local para o mercado canadense. Representação comercial estratégica para empresas globais.",
                 "nav-about": "Sobre", "nav-process": "Processo", "nav-contact": "Contato",
-                "hero-h1": "Sua ponte local para o mercado canadense",
-                "hero-h2": "Representação Estratégica. Raízes Locais.",
-                "title-about": "Sobre Nós", "about-lead": "Somos uma empresa canadense de representação comercial dedicada a conectar empresas com parceiros estratégicos.",
-                "card-service-t": "Serviço", "card-mission-t": "Nossa Missão", "card-vision-t": "Nossa Vision", "card-values-t": "Nossos Valores",
-                "title-process": "Nosso Processo", "p1-t": "1. Avaliar", "p2-t": "2. Direcionar", "p3-t": "3. Apresentar", "p4-t": "4. Negociar", "p5-t": "5. Fechar", "p6-t": "6. Crescer",
-                "comm-t": "Modelo baseado em comissão", "title-contact": "Contate-nos",
+                "hero-h1": "Sua Ponte Local para o Mercado Canadense",
+                "hero-h2": "Representação Estratégica. Raízes Locais, Mente Global.",
+                "title-about": "Sobre Nós", "about-lead": "Somos uma empresa canadense de representação comercial dedicada a conectar empresas com distribuidores e parceiros estratégicos em todo o Canadá.",
+                "card-service-t": "Serviço", "card-service-p": "Atuamos como sua força comercial, conectando você diretamente aos tomadores de decisão.",
+                "card-mission-t": "Nossa Missão", "card-mission-p": "Conectar empresas a parceiros estratégicos no Canadá através de uma representação focada em resultados.",
+                "card-vision-t": "Nossa Visão", "card-vision-p": "Ser a referência de confiança em representação canadense, reconhecida por construir parcerias fortes.",
+                "card-values-t": "Nossos Valores", "card-values-p": "Utilizamos conhecimento de mercado local para criar oportunidades reais.",
+                "title-process": "Nosso Processo", 
+                "p1-t": "1. Avaliar", "p1-p": "Entendemos seus objetivos de negócio para o mercado canadense.",
+                "p2-t": "2. Direcionar", "p2-p": "Identificamos os distribuidores e parceiros certos para sua marca.",
+                "p3-t": "3. Apresentar", "p3-p": "Representamos sua marca localmente para os tomadores de decisão.",
+                "p4-t": "4. Negociar", "p4-p": "Conduzimos negociações para garantir os melhores termos possíveis.",
+                "p5-t": "5. Fechar", "p5-p": "Ajudamos a finalizar acordos e ativar parcerias.",
+                "p6-t": "6. Crescer", "p6-p": "Apoiamos o crescimento contínuo das vendas a longo prazo.",
+                "comm-t": "Modelo Baseado em Comissão", "comm-p": "Sem resultados, sem comissão — nosso sucesso está ligado ao seu.",
+                "title-contact": "Contate-nos", "hours-lead": "Disponível durante o horário (PST):",
+                "day-mon": "Segunda-feira", "day-tue": "Terça-feira", "day-wed": "Quarta-feira", "day-thu": "Quinta-feira", "day-fri": "Sexta-feira",
                 "label-wa": "WhatsApp", "label-email": "E-mail", "label-phone": "Telefone",
-                "form-title": "Consulta de Negócios", "lbl-name": "Nome Completo *", "lbl-company": "Nome da Empresa *", "lbl-f-email": "Endereço de E-mail *",
-                "lbl-website": "Website (Opcional)", "lbl-industry": "Indústria *", "lbl-product": "Produto/Serviço Principal *",
-                "lbl-qty": "Capacidade de Vendas", "lbl-msg": "Como podemos ajudar na sua expansão? *", "btn-submit": "Enviar",
+                "form-title": "Inquérito Comercial", "lbl-name": "Nome Completo *", "lbl-company": "Nome da Empresa *", "lbl-f-email": "E-mail *",
+                "lbl-website": "Website (Opcional)", "lbl-product": "Produto/Serviço Principal *",
+                "lbl-qty": "Capacidade Atual de Vendas", "lbl-msg": "Como podemos ajudar na sua expansão no Canadá? *", "btn-submit": "Enviar Pedido",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – Todos os direitos reservados"
             }
         };
 
         function setLanguage(lang) {
             const dict = translations[lang];
+            if (!dict) return;
+
             Object.keys(dict).forEach(id => {
                 const el = document.getElementById(id);
-                if (el) el.innerText = dict[id];
+                if (el) {
+                    if (id === "meta-title") {
+                        document.title = dict[id];
+                    } else if (id === "meta-desc") {
+                        el.setAttribute("content", dict[id]);
+                    } else {
+                        el.innerText = dict[id];
+                    }
+                }
             });
-            document.title = dict.title;
+            
+            // Update HTML lang attribute
+            document.documentElement.lang = lang;
             localStorage.setItem('preferredLang', lang);
         }
 
