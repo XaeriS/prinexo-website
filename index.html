@@ -128,7 +128,7 @@
                 </div>
                 <div class="form-group">
                     <label id="lbl-website">Website (Optional)</label>
-                    <input type="url" name="Website">
+                    <input type="url" name="Website" placeholder="https://www.example.com">
                 </div>
                 <div class="form-group">
                     <label id="lbl-product">Main Product/Service *</label>
@@ -258,10 +258,10 @@
 
         function openModal() { document.getElementById("contactModal").style.display = "flex"; }
         function closeModal() { document.getElementById("contactModal").style.display = "none"; }
-        window.onclick = (event) => {
-            const modal = document.getElementById("contactModal");
-            if (event.target == modal) closeModal();
-        }
+        //window.onclick = (event) => {
+            //const modal = document.getElementById("contactModal");
+            //if (event.target == modal) closeModal();
+        //}
 
         window.onload = () => {
             const savedLang = localStorage.getItem('preferredLang') || 'en';
