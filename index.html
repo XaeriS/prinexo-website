@@ -113,7 +113,9 @@
         <div class="modal-content">
             <span class="close-modal" onclick="closeModal()">&times;</span>
             <h3 id="form-title">Business Inquiry</h3>
-            <form id="businessForm" action="mailto:contact@prinexo.com" method="post" enctype="text/plain">
+            <form id="businessForm">
+				<input type="hidden" name="access_key" value="6f88a42f-2c30-49a3-9786-6884ac6f3142">
+				<input type="hidden" name="subject" id="dynamic-subject">
                 <div class="form-group">
                     <label id="lbl-name">Full Name *</label>
                     <input type="text" name="Name" required>
@@ -128,7 +130,8 @@
                 </div>
                 <div class="form-group">
                     <label id="lbl-website">Website (Optional)</label>
-                    <input type="url" name="Website" placeholder="https://www.example.com">
+                    <input type="text" name="website" placeholder="Website (e.g. www.mysite.com)" pattern="^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$" 
+						   title="Please enter a valid URL (e.g., www.company.com or company.com)" required>
                 </div>
                 <div class="form-group">
                     <label id="lbl-product">Main Product/Service *</label>
@@ -142,8 +145,13 @@
                     <label id="lbl-msg">How can we help you expand in Canada? *</label>
                     <textarea name="Message" rows="4" required></textarea>
                 </div>
+				
                 <button type="submit" class="cta-button" id="btn-submit">Send Inquiry</button>
-            </form>
+				
+				<div id="form-result" >
+					Inquiry has been sent, you will receive an e-mail confirmation shortly.
+				</div>
+			</form>
         </div>
     </div>
 
@@ -176,7 +184,9 @@
                 "form-title": "Business Inquiry", "lbl-name": "Full Name *", "lbl-company": "Company Name *", "lbl-f-email": "Email Address *",
                 "lbl-website": "Website (Optional)", "lbl-product": "Main Product/Service *",
                 "lbl-qty": "Current Sales Capacity", "lbl-msg": "How can we help you expand in Canada? *", "btn-submit": "Send Inquiry",
-                "footer-text": "© 2026 Prinexo Solutions Inc. – All Rights Reserved"
+                "footer-text": "© 2026 Prinexo Solutions Inc. – All Rights Reserved",
+				"form-success": "Inquiry has been sent,<br>you will receive an e-mail confirmation shortly.",
+				"form-sending": "Sending..."
             },
             fr: {
                 "meta-title": "Prinexo | Représentation Stratégique au Canada",
@@ -203,7 +213,9 @@
                 "form-title": "Demande commerciale", "lbl-name": "Nom complet *", "lbl-company": "Nom de l'entreprise *", "lbl-f-email": "Adresse e-mail *",
                 "lbl-website": "Site Web (Optionnel)", "lbl-product": "Produit/Service principal *",
                 "lbl-qty": "Capacité de vente actuelle", "lbl-msg": "Comment pouvons-nous vous aider à vous expandre au Canada ? *", "btn-submit": "Envoyer la demande",
-                "footer-text": "© 2026 Prinexo Solutions Inc. – Tous droits réservés"
+                "footer-text": "© 2026 Prinexo Solutions Inc. – Tous droits réservés",
+				"form-success": "La demande a été envoyée,<br>vous recevrez bientôt une confirmation par e-mail.",
+				"form-sending": "Envoi en cours..."
             },
             pt: {
                 "meta-title": "Prinexo | Representação Estratégica no Canadá",
@@ -230,43 +242,116 @@
                 "form-title": "Inquérito Comercial", "lbl-name": "Nome Completo *", "lbl-company": "Nome da Empresa *", "lbl-f-email": "E-mail *",
                 "lbl-website": "Website (Opcional)", "lbl-product": "Produto/Serviço Principal *",
                 "lbl-qty": "Capacidade Atual de Vendas", "lbl-msg": "Como podemos ajudar na sua expansão no Canadá? *", "btn-submit": "Enviar Pedido",
-                "footer-text": "© 2026 Prinexo Solutions Inc. – Todos os direitos reservados"
+                "footer-text": "© 2026 Prinexo Solutions Inc. – Todos os direitos reservados",
+				"form-success": "O pedido foi enviado,<br>receberá em breve uma confirmação por e-mail.",
+				"form-sending": "Enviando..."
             }
         };
 
-        function setLanguage(lang) {
-            const dict = translations[lang];
-            if (!dict) return;
+		// Modal functions
+		function openModal() { 
+			document.getElementById("contactModal").style.display = "flex"; 
+		}
 
-            Object.keys(dict).forEach(id => {
-                const el = document.getElementById(id);
-                if (el) {
-                    if (id === "meta-title") {
-                        document.title = dict[id];
-                    } else if (id === "meta-desc") {
-                        el.setAttribute("content", dict[id]);
-                    } else {
-                        el.innerText = dict[id];
-                    }
-                }
-            });
-            
-            // Update HTML lang attribute
-            document.documentElement.lang = lang;
-            localStorage.setItem('preferredLang', lang);
-        }
+		function closeModal() { 
+			document.getElementById("contactModal").style.display = "none"; 
+			// Hide the success/sending overlay when the modal closes so it's fresh for next time
+			document.getElementById('form-result').style.display = "none";
+		}
 
-        function openModal() { document.getElementById("contactModal").style.display = "flex"; }
-        function closeModal() { document.getElementById("contactModal").style.display = "none"; }
-        //window.onclick = (event) => {
-            //const modal = document.getElementById("contactModal");
-            //if (event.target == modal) closeModal();
-        //}
+		// Language Switcher function
+		function setLanguage(lang) {
+			const dict = translations[lang];
+			if (!dict) return;
+			Object.keys(dict).forEach(id => {
+				const el = document.getElementById(id);
+				if (el) {
+					if (id === "meta-title") { document.title = dict[id]; }
+					else if (id === "meta-desc") { el.setAttribute("content", dict[id]); }
+					else { el.innerText = dict[id]; }
+				}
+			});
+			// Crucial: Update the lang attribute so the form knows which translation to use
+			document.documentElement.lang = lang;
+			localStorage.setItem('preferredLang', lang);
+		}
 
-        window.onload = () => {
-            const savedLang = localStorage.getItem('preferredLang') || 'en';
-            setLanguage(savedLang);
-        };
+		// --- WEB3FORMS & DYNAMIC TRANSLATED LOGIC ---
+		const form = document.getElementById('businessForm');
+		const result = document.getElementById('form-result');
+
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+
+			// 1. Identify current language and dictionary
+			const currentLangCode = document.documentElement.lang || 'en';
+			const dict = translations[currentLangCode];
+
+			// 2. Generate Timestamp (Format: YYYY-MM-DD HH:mm)
+			const now = new Date();
+			const timestamp = now.getFullYear() + '-' + 
+							  (now.getMonth()+1).toString().padStart(2, '0') + '-' + 
+							  now.getDate().toString().padStart(2, '0') + ' ' + 
+							  now.getHours().toString().padStart(2, '0') + ':' + 
+							  now.getMinutes().toString().padStart(2, '0');
+
+			// 3. Update the Website URL if user only typed "www..."
+			const websiteInput = form.querySelector('input[name="website"]');
+			if (websiteInput && websiteInput.value && !websiteInput.value.startsWith('http')) {
+				websiteInput.value = 'https://' + websiteInput.value;
+			}
+
+			// 4. Set the dynamic subject in the hidden input
+			const subjectInput = document.getElementById('dynamic-subject');
+			subjectInput.value = `${timestamp} - ${currentLangCode.toUpperCase()} - New Business Inquiry - Prinexo`;
+
+			// 5. Prepare and Send Data
+			const formData = new FormData(form);
+			const object = Object.fromEntries(formData);
+			const json = JSON.stringify(object);
+
+			// Show overlay and display translated "Sending..." text
+			result.style.display = "flex";
+			result.innerHTML = `<i class="fas fa-spinner fa-spin"></i><br>${dict["form-sending"]}`;
+
+			fetch('https://api.web3forms.com/submit', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json',
+						'Accept': 'application/json'
+					},
+					body: json
+				})
+				.then(async (response) => {
+					let res = await response.json();
+					if (response.status == 200) {
+						// Success State: Use translated success message from dictionary
+						result.innerHTML = `
+							<i class="fas fa-check-circle" style="font-size: 3rem; color: #2ecc71; margin-bottom: 15px;"></i><br>
+							${dict["form-success"]}
+						`;
+						form.reset();
+					} else {
+						result.innerHTML = res.message;
+					}
+				})
+				.catch(error => {
+					result.innerHTML = "Error!";
+					console.error(error);
+				})
+				.then(function() {
+					// Hide the overlay after 5 seconds
+					setTimeout(() => { 
+						result.style.display = "none"; 
+					}, 5000);
+				});
+		});
+
+		window.onload = () => {
+			const savedLang = localStorage.getItem('preferredLang') || 'en';
+			setLanguage(savedLang);
+		};
+		
     </script>
 </body>
 </html>
