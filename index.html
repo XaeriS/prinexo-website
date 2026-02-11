@@ -29,6 +29,7 @@
         <img src="https://flagcdn.com/w40/ca.png" onclick="setLanguage('en')" alt="English" style="cursor:pointer">
         <img src="https://flagcdn.com/w40/fr.png" onclick="setLanguage('fr')" alt="Français" style="cursor:pointer">
         <img src="https://flagcdn.com/w40/br.png" onclick="setLanguage('pt')" alt="Português" style="cursor:pointer">
+		<img src="https://flagcdn.com/w40/es.png" onclick="setLanguage('es')" alt="Português" style="cursor:pointer">
     </div>
 
     <header>
@@ -129,9 +130,9 @@
                     <input type="email" name="Email" required>
                 </div>
                 <div class="form-group">
-                    <label id="lbl-website">Website (Optional)</label>
+                    <label id="lbl-website">Website</label>
                     <input type="text" name="website" placeholder="Website (e.g. www.mysite.com)" pattern="^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$" 
-						   title="Please enter a valid URL (e.g., www.company.com or company.com)" required>
+						   title="Please enter a valid URL (e.g., www.company.com or company.com)">
                 </div>
                 <div class="form-group">
                     <label id="lbl-product">Main Product/Service *</label>
@@ -182,7 +183,7 @@
                 "day-mon": "Monday", "day-tue": "Tuesday", "day-wed": "Wednesday", "day-thu": "Thursday", "day-fri": "Friday",
                 "label-wa": "WhatsApp", "label-email": "Email", "label-phone": "Phone",
                 "form-title": "Business Inquiry", "lbl-name": "Full Name *", "lbl-company": "Company Name *", "lbl-f-email": "Email Address *",
-                "lbl-website": "Website (Optional)", "lbl-product": "Main Product/Service *",
+                "lbl-website": "Website", "lbl-product": "Main Product/Service *",
                 "lbl-qty": "Current Sales Capacity", "lbl-msg": "How can we help you expand in Canada? *", "btn-submit": "Send Inquiry",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – All Rights Reserved",
 				"form-success": "Inquiry has been sent,<br>you will receive an e-mail confirmation shortly.",
@@ -211,7 +212,7 @@
                 "day-mon": "Lundi", "day-tue": "Mardi", "day-wed": "Mercredi", "day-thu": "Jeudi", "day-fri": "Vendredi",
                 "label-wa": "WhatsApp", "label-email": "E-mail", "label-phone": "Téléphone",
                 "form-title": "Demande commerciale", "lbl-name": "Nom complet *", "lbl-company": "Nom de l'entreprise *", "lbl-f-email": "Adresse e-mail *",
-                "lbl-website": "Site Web (Optionnel)", "lbl-product": "Produit/Service principal *",
+                "lbl-website": "Site Web", "lbl-product": "Produit/Service principal *",
                 "lbl-qty": "Capacité de vente actuelle", "lbl-msg": "Comment pouvons-nous vous aider à vous expandre au Canada ? *", "btn-submit": "Envoyer la demande",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – Tous droits réservés",
 				"form-success": "La demande a été envoyée,<br>vous recevrez bientôt une confirmation par e-mail.",
@@ -240,11 +241,40 @@
                 "day-mon": "Segunda-feira", "day-tue": "Terça-feira", "day-wed": "Quarta-feira", "day-thu": "Quinta-feira", "day-fri": "Sexta-feira",
                 "label-wa": "WhatsApp", "label-email": "E-mail", "label-phone": "Telefone",
                 "form-title": "Inquérito Comercial", "lbl-name": "Nome Completo *", "lbl-company": "Nome da Empresa *", "lbl-f-email": "E-mail *",
-                "lbl-website": "Website (Opcional)", "lbl-product": "Produto/Serviço Principal *",
+                "lbl-website": "Website", "lbl-product": "Produto/Serviço Principal *",
                 "lbl-qty": "Capacidade Atual de Vendas", "lbl-msg": "Como podemos ajudar na sua expansão no Canadá? *", "btn-submit": "Enviar Pedido",
                 "footer-text": "© 2026 Prinexo Solutions Inc. – Todos os direitos reservados",
 				"form-success": "O pedido foi enviado,<br>receberá em breve uma confirmação por e-mail.",
 				"form-sending": "Enviando..."
+            },
+			es: {
+                "meta-title": "Prinexo | Representación Estratégica en Canadá",
+                "meta-desc": "Su puente local hacia el mercado canadiense. Representación comercial estratégica para empresas globales.",
+                "nav-about": "Nosotros", "nav-process": "Proceso", "nav-contact": "Contacto",
+                "hero-h1": "Su Puente Local hacia el Mercado Canadiense",
+                "hero-h2": "Representación Estratégica. Raíces Locales, Mente Global.",
+                "title-about": "Sobre Nosotros", "about-lead": "Somos una empresa canadiense de representación comercial dedicada a conectar empresas con distribuidores y socios estratégicos en todo el Canadá.",
+                "card-service-t": "Servicio", "card-service-p": "Actuamos como su fuerza comercial, conectándolo directamente con los tomadores de decisiones.",
+                "card-mission-t": "Nuestra Misión", "card-mission-p": "Conectar empresas con socios estratégicos en Canadá a través de una representación enfocada en resultados.",
+                "card-vision-t": "Nuestra Visión", "card-vision-p": "Ser el referente de confianza en representación canadiense, reconocido por construir alianzas sólidas.",
+                "card-values-t": "Nuestros Valores", "card-values-p": "Utilizamos el conocimiento del mercado local para crear oportunidades reales.",
+                "title-process": "Nuestro Proceso", 
+                "p1-t": "1. Evaluar", "p1-p": "Entendemos sus objetivos de negocio para el mercado canadiense.",
+                "p2-t": "2. Dirigir", "p2-p": "Identificamos a los distribuidores y socios adecuados para su marca.",
+                "p3-t": "3. Presentar", "p3-p": "Representamos su marca localmente ante los tomadores de decisiones.",
+                "p4-t": "4. Negociar", "p4-p": "Conducimos las negociaciones para garantizar los mejores términos posibles.",
+                "p5-t": "5. Cerrar", "p5-p": "Ayudamos a finalizar acuerdos y activar las alianzas.",
+                "p6-t": "6. Crecer", "p6-p": "Apoyamos el crecimiento continuo de las ventas a largo plazo.",
+                "comm-t": "Modelo Basado en Comisiones", "comm-p": "Sin resultados no hay comisión — nuestro éxito está ligado al suyo.",
+                "title-contact": "Contáctenos", "hours-lead": "Disponible durante el horario (PST):",
+                "day-mon": "Lunes", "day-tue": "Martes", "day-wed": "Miércoles", "day-thu": "Jueves", "day-fri": "Viernes",
+                "label-wa": "WhatsApp", "label-email": "E-mail", "label-phone": "Teléfono",
+                "form-title": "Consulta Comercial", "lbl-name": "Nombre Completo *", "lbl-company": "Nombre de la Empresa *", "lbl-f-email": "E-mail *",
+                "lbl-website": "Sitio Web", "lbl-product": "Producto/Servicio Principal *",
+                "lbl-qty": "Capacidad Actual de Ventas", "lbl-msg": "¿Cómo podemos ayudar en su expansión en Canadá? *", "btn-submit": "Enviar Solicitud",
+                "footer-text": "© 2026 Prinexo Solutions Inc. – Todos los derechos reservados",
+                "form-success": "La solicitud ha sido enviada,<br>recibirá pronto una confirmación por e-mail.",
+                "form-sending": "Enviando..."
             }
         };
 
